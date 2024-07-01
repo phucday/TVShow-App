@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="tvShowImageURL"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/imageTVShowContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            >
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/background_back_button"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/icon_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorTextIcons"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:id="@+id/NameTvShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:maxLines="1"
+                android:textSize="@dimen/_16ssp"
+                android:textColor="@color/colorTextIcons"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageTVShow"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="100dp"
+            android:layout_marginEnd="13dp"
+            android:imageURL="@{tvShowImageURL}"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="@dimen/_6sdp" />
+    </LinearLayout>
+</layout>
